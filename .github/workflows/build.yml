@@ -24,7 +24,7 @@ jobs:
     # - name: Build the Docker argument
     #   run: docker --build-arg RUNNER_VERSION=2.319.1 .
     - name: Build the Docker image  
-      run: docker build --build-arg RUNNER_VERSION=2.319.1 && docker build -t supdude/devops .
+      run: docker build --build-arg RUNNER_VERSION=2.319.1 supdude/devops
     - name: Push to Dockerhub
       run: docker push supdude/devops:latest1
     - name: Pull Docker image
