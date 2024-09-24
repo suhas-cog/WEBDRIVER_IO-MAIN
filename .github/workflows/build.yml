@@ -29,8 +29,8 @@ jobs:
     - name: Build the Docker image  
       run: |
         docker build \
-      --build-arg RUNNER_VERSION=2.319.1 \
-      -t supdude/tr-poc:l1 .
+        --build-arg RUNNER_VERSION=2.319.1 \
+        -t supdude/tr-poc:l1 .
 
     - name: Push to Dockerhub
       run: docker push supdude/tr-poc:l1
