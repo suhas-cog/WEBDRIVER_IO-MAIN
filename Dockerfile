@@ -21,6 +21,8 @@
 # base image
 
 FROM ubuntu:20.04
+
+ONBUILD ADD . /
  
 #input GitHub runner version argument
 
