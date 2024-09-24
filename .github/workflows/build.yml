@@ -22,8 +22,8 @@ jobs:
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       
     - name: Build the Docker image
-      run: docker build -t supdude/tr-poc .
+      run: docker build -t supdude/tr-poc-latest .
     - name: Push to Dockerhub
-      run: docker push supdude/tr-poc:latest
+      run: docker push supdude/tr-poc-latest:latest
     - name: Pull Docker image
-      run: sudo docker pull supdude/tr-poc:latest
+      run: sudo docker pull supdude/tr-poc-latest:latest
