@@ -11,7 +11,7 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest1
     
     steps:
     - uses: actions/checkout@v3
@@ -24,6 +24,6 @@ jobs:
     - name: Build the Docker image
       run: docker build -t supdude/devops .
     - name: Push to Dockerhub
-      run: docker push supdude/devops:latest
+      run: docker push supdude/devops:latest1
     - name: Pull Docker image
-      run: sudo docker pull supdude/devops:latest
+      run: sudo docker pull supdude/devops:latest1
