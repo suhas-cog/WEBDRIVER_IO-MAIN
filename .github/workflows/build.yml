@@ -21,10 +21,12 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       
-    - name: Build the Docker argument
-      run: docker --build-arg RUNNER_VERSION=2.319.1 .
+    # - name: Build the Docker argument
+    #   run: docker --build-arg RUNNER_VERSION=2.319.1 .
     - name: Build the Docker image  
-      run: docker build -t supdude/devops .
+      run: docker build \ 
+      -t supdude/devops \ 
+      --build-arg RUNNER_VERSION=2.319.1 .
     - name: Push to Dockerhub
       run: docker push supdude/devops:latest1
     - name: Pull Docker image
