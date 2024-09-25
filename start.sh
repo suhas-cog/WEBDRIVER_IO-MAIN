@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/sh
 
  
 GH_OWNER=$GH_OWNER
