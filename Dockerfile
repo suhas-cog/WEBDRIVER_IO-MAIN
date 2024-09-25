@@ -46,4 +46,3 @@ USER docker
 # set the entrypoint to the start.sh script
 
 ENTRYPOINT ["./start.sh"]
-CMD [ "run" ]
