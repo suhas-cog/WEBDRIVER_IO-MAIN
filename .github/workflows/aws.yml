@@ -1,36 +1,36 @@
-# name: CD Pipeline
+# # name: CD Pipeline
 
-on:
-  workflow_run:
-    workflows: ["Build yaml"]
-    types:
-      - completed
+# on:
+#   workflow_run:
+#     workflows: ["Build yaml"]
+#     types:
+#       - completed
 
 
+# # jobs:
+
+# #   build:
+
+# #     runs-on: self hosted
+
+# env:
+#   # BUCKET_NAME : "BUCKET-NAME"
+#   AWS_REGION : "us-east-1"
+#   AWS_ACCOUNT: 739275441922
+# # permission can be added at job level or workflow level
+# permissions:
+#   id-token: write   # This is required for requesting the JWT
+#   contents: read    # This is required for actions/checkout
 # jobs:
-
-#   build:
-
-#     runs-on: 
-
-env:
-  # BUCKET_NAME : "BUCKET-NAME"
-  AWS_REGION : "us-east-1"
-  AWS_ACCOUNT: 739275441922
-# permission can be added at job level or workflow level
-permissions:
-  id-token: write   # This is required for requesting the JWT
-  contents: read    # This is required for actions/checkout
-jobs:
-  runAWSCommands:
-    runs-on: ubuntu-latest
-  # This is required for actions/checkout
-    steps:
-      - name: Git clone the repository
-        uses: actions/checkout@v4
-      - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v3
-        with:
-          role-to-assume: arn:aws:iam::739275441922:role/2302372-github-poc
-          # role-session-name: samplerolesession
-          aws-region: ${{ env.AWS_REGION }}
+#   runAWSCommands:
+#     runs-on: ubuntu-latest
+#   # This is required for actions/checkout
+#     steps:
+#       - name: Git clone the repository
+#         uses: actions/checkout@v4
+#       - name: configure aws credentials
+#         uses: aws-actions/configure-aws-credentials@v3
+#         with:
+#           role-to-assume: arn:aws:iam::739275441922:role/2302372-github-poc
+#           # role-session-name: samplerolesession
+#           aws-region: ${{ env.AWS_REGION }}

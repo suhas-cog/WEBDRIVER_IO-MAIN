@@ -2,9 +2,7 @@ FROM ubuntu:20.04
 
 #input GitHub runner version argument
 
-ARG RUNNER_VERSION=2.319.1
-
-ENV RunnerVersion=2.319.1
+ARG RUNNER_VERSION
 
 ENV DEBIAN_FRONTEND=noninteractive
 
